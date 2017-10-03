@@ -1,0 +1,21 @@
+{
+    "name": "odirleiborgert/facebook-bot-sdk",
+    "description": "SDK for bot facebook messager",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Odirlei Borgert",
+            "email": "odirleiborgert@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "phpunit/phpunit": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodeBot\\": "src"
+        }   
+    }
+}
