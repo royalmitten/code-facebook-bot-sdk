@@ -4,7 +4,8 @@
 
   <testsuites>
     <testsuite name="The project tests">
-      <directory>./tests</directory>
+      <directory>./tests/unity</directory>
+      <directory>./tests/integration</directory>
     </testsuite>
   </testsuites>
 
