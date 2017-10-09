@@ -2,7 +2,7 @@
 
 namespace CodeBot\Message;
 
-class Text {
+class Text implements Message {
 
 	private $recipientId;
 
