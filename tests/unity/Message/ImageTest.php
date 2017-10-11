@@ -3,27 +3,30 @@
 namespace Tests\CodeBot\Message;
 
 use PHPUnit\Framework\TestCase;
-use CodeBot\Message\Text;
+use CodeBot\Message\Image;
 
-class TextTest extends TestCase {
+class ImageTest extends TestCase {
 
 	public function testMessage()
 	{
         $id = mt_rand(1, 1000);
         $message = $string = bin2hex(openssl_random_pseudo_bytes(10));
 
-		$actual = (new Text($id))->message($message);
+		$actual = (new Image($id))->message($message);
 		$expected = [
             'recipient' => [
-                'id'=> $id
+                'id' => $id
             ],
             'message' => [
-                'text' => $message,
-                'metadata' => 'DEVELOPER_DEFINED_METADATA'
+                'attachment' => [
+                    'type' => 'image',
+                    'payload' => [
+                        'url' => $message
+                    ]
+                ]
             ]
         ];
 
 		$this->assertEquals($actual, $expected);
 	}
-	
 }
