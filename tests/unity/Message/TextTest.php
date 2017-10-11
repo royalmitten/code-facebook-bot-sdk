@@ -5,25 +5,25 @@ namespace Tests\CodeBot\Message;
 use PHPUnit\Framework\TestCase;
 use CodeBot\Message\Text;
 
-class TextTest extends TestCase {
-
-	public function testMessage()
-	{
+class TextTest extends TestCase
+{
+    public function testMessage()
+    {
         $id = mt_rand(1, 1000);
         $message = $string = bin2hex(openssl_random_pseudo_bytes(10));
 
-		$actual = (new Text($id))->message($message);
-		$expected = [
+        $actual = (new Text($id))->message($message);
+        $expected = [
             'recipient' => [
-                'id'=> $id
+                'id' => $id,
             ],
             'message' => [
                 'text' => $message,
-                'metadata' => 'DEVELOPER_DEFINED_METADATA'
-            ]
+                'metadata' => 'DEVELOPER_DEFINED_METADATA',
+            ],
         ];
 
-		$this->assertEquals($actual, $expected);
-	}
-	
+        $this->assertEquals($actual, $expected);
+    }
+
 }
