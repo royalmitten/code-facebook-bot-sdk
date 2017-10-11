@@ -10,7 +10,7 @@ class ImageTest extends TestCase
     public function testMessage()
     {
         $id = mt_rand(1, 1000);
-        $message = $string = bin2hex(openssl_random_pseudo_bytes(10));
+        $message = bin2hex(openssl_random_pseudo_bytes(10));
 
         $actual = (new Image($id))->message($message);
         $expected = [
